@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="QuotesApp.Pages.QuoteDetailPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="White">
+                <Frame BackgroundColor="Black" HasShadow="False"  Padding="20">
+                    <StackLayout Spacing="20" Padding="10">
+                        <Label Text="{Binding Quote.Author}" HorizontalTextAlignment="Center" FontSize="Large" TextColor="White"/>
+                        <Label Text="{Binding Quote.Description}" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="White"/>
+                    </StackLayout>
+                </Frame>
+                <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="20" Spacing="50" HorizontalOptions="CenterAndExpand">
+                    <ImageButton BackgroundColor="Transparent" Source="copy.png" WidthRequest="40" HeightRequest="40" Command="{Binding CopyQuoteCommand}"/>
+                    <ImageButton BackgroundColor="Transparent" Source="share.png" WidthRequest="40" HeightRequest="40" Command="{Binding ShareQuoteCommand}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

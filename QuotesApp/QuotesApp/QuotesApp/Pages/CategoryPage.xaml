@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="QuotesApp.Pages.CategoryPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="plus.png" Command="{Binding AddQuoteCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid>
+            <ListView HasUnevenRows="True" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory,Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="{Binding ColorCode}" Padding="20">
+                                <Label Text="{Binding Title}" TextColor="White" FontSize="Large"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center" Color="#FF1744" IsRunning="{Binding IsBusy}"/>
+        </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>
